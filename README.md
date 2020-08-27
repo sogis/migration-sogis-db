@@ -2,7 +2,7 @@
 
 Enthält für die zu migrierenden Datensätze die INTERLIS-Modelle, die GRETL-Jobs für die Migration der Daten und die auf die Modelle angepassten GRETL-Jobs.
 
-Vorschlag für eine Ordnerstruktur:
+Ordnerstruktur:
 ```
 Ordner: gretljobs
 - Unterordner: GRETL-Jobs für die Migration
