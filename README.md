@@ -8,7 +8,8 @@ Ordner: gretljobs
 - Unterordner: GRETL-Jobs für die Migration
 - Unterordner: GRETL-Jobs für die Publikations-DB
 
-Ordner: models: UML-Editor-Dateien, Modelle
+Ordner: models
+  UML-Editor-Dateien, Modelle
 
 Ordner: skripte
 - Unterordner: db_schema_definition_edit
