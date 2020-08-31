@@ -1,0 +1,5 @@
+# exclude .gradle directories
+**/.gradle/
+
+# exclude *.retry files
+**/*.retry
