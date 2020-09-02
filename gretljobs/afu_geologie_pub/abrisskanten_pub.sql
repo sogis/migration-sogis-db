@@ -1,5 +1,4 @@
-SELECT 
-    t_id, 
+SELECT
     geometrie,     
     typ
 FROM 

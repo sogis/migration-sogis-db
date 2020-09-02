@@ -1,5 +1,4 @@
 SELECT 
-    ogc_fid AS t_id, 
     wkb_geometry AS geometrie, 
     CASE
         WHEN symbol::int = 101
@@ -24,7 +23,6 @@ FROM
     geologie.tekton
 WHERE
     archive = 0
---        and ogc_fid not in (7490,7336,7348,7355,7337,7339,7340,7344,7345,7349,7388,7389,7390,7371,7347,7439,7440,7431,7434,7346,7489,7495,7496,7497,7498,7534,7535,7536,7692,7819,7820,7829,7872,7946,8715)
 ;
         
                  

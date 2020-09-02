@@ -1,5 +1,4 @@
 SELECT 
-    ogc_fid AS t_id, 
     wkb_geometry AS geometrie, 
     fallrtg AS orientierung_einfall,
     fall AS winkelbetrag_einfall,
@@ -17,7 +16,6 @@ FROM
     geologie.sfall
 WHERE
     archive = 0
-                                                                                and ogc_fid not in (8050,7481,5980,4980)
 ;
         
                  

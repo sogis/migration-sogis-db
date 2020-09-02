@@ -1,5 +1,4 @@
 SELECT 
-    ogc_fid AS t_id, 
     wkb_geometry AS geometrie,     
     CASE
         WHEN symbol::int = 9
@@ -11,7 +10,6 @@ SELECT
         WHEN symbol::int = 202
             THEN 'Hoehle_aktiv'    
     END AS typ
-
 FROM 
     geologie.karst
 WHERE

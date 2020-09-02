@@ -1,5 +1,4 @@
 SELECT 
-    t_id, 
     geometrie, 
     orientierung_einfall,
     winkelbetrag_einfall,

@@ -1,5 +1,4 @@
-SELECT 
-    ogc_fid AS t_id, 
+SELECT
     wkb_geometry AS geometrie,     
     CASE
         WHEN symbol::int = 112
@@ -11,7 +10,6 @@ SELECT
         WHEN symbol::int = 117
             THEN 'Terrassenrand'    
     END AS typ
-
 FROM 
     geologie.abrkt AS abrisskanten
 WHERE

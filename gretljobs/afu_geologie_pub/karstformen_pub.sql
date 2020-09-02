@@ -1,5 +1,4 @@
-SELECT 
-    t_id, 
+SELECT
     geometrie,     
     typ,
     typ.dispname as typ_txt

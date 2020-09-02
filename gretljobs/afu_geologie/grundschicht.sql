@@ -1,5 +1,4 @@
 SELECT 
-    grunds.ogc_fid AS t_id, 
     grunds.wkb_geometry AS geometrie,     
     codes_system1.code_text_neu AS system1,
     codes_system2.code_text_neu AS system2, 
@@ -29,7 +28,6 @@ SELECT
     grunds.maxwinkel AS maximalwinkel, 
     grunds.midwinkel AS mittlerer_winkel, 
     grunds.minwinkel AS minimalwinkel
---    substr(grunds.neuer_code::text, 11, 1) AS gesteinstyp
 FROM 
     geologie_migration.grunds
     LEFT JOIN geologie_migration.codes AS codes_system1
@@ -175,7 +173,4 @@ FROM
             codes_fehlmatmae.attribut_id = 23
 WHERE 
     grunds.archive = 0
-                                                               and ogc_fid <> 1695  -- formation1 NULL
-                                                               and ogc_fid <> 1656  -- reibungswinkel NULL
-                                                               and ogc_fid <> 1660  -- system_2 NULL
 ;

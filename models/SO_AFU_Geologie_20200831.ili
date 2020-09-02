@@ -38,7 +38,6 @@ VERSION "2020-08-31"  =
       Lehm,
       Torf,
       !!@ ili2db.dispName = "Moräne"
-      !!@ ili2db.dispName="Moräne"
       Moraene,
       Seekreide,
       unbekannt
@@ -62,7 +61,7 @@ VERSION "2020-08-31"  =
       Guenz
     );
 
-    /** Geologische Formation (von... bis...)
+    /** Geologische Formation
      */
     geologische_Formation = (
       Bundsandstein,
@@ -126,7 +125,7 @@ VERSION "2020-08-31"  =
       Postglazial
     );
 
-    /** Schichtgliederung
+    /** Geologische Schichtgliederung
      */
     geologische_Schichtgliederung = (
       !!@ ili2db.dispName = "Aarwanger Molasse (Blättermolasse)"
@@ -390,7 +389,7 @@ VERSION "2020-08-31"  =
       Wynauer_Suesswasserkalk
     );
 
-    /** Geologische Serie (von... bis...)
+    /** Geologische Serie
      */
     geologische_Serie = (
       Dogger,
@@ -411,7 +410,7 @@ VERSION "2020-08-31"  =
       Pleistozaen
     );
 
-    /** Geologisches System (von... bis...)
+    /** Geologisches System
      */
     geologisches_System = (
       !!@ ili2db.dispName = "Tertiär"
@@ -443,6 +442,20 @@ VERSION "2020-08-31"  =
       gesaettigt_groesser_40m,
       !!@ ili2db.dispName = "gesättigt, Mächtigkeit undifferenziert"
       gesaettigt_Maechtigkeit_undifferenziert
+    );
+
+    Kohaesion = (
+      !!@ ili2db.dispName = "0 - 5"
+      kleiner_5,
+      !!@ ili2db.dispName = "5 - 10"
+      zwischen_5_und_10,
+      !!@ ili2db.dispName = "10 - 15"
+      zwischen_10_und_15,
+      !!@ ili2db.dispName = "15 - 20"
+      zwischen_15_und_20,
+      !!@ ili2db.dispName = "> 20"
+      groesser_20,
+      unbekannt
     );
 
     Lithologie = (
@@ -478,6 +491,22 @@ VERSION "2020-08-31"  =
       undifferenziert
     );
 
+    Material = (
+      !!@ ili2db.dispName = "0 - 0.5 m"
+      zwischen_0_und_0_5m,
+      !!@ ili2db.dispName = "0.5 - 2 m"
+      zwischen_0_5_und_2m,
+      !!@ ili2db.dispName = "2 - 5 m"
+      zwischen_2_und_5m,
+      !!@ ili2db.dispName = "5 - 10 m"
+      zwischen_5_und_10m,
+      !!@ ili2db.dispName = "10 - 20 m"
+      zwischen_10_und_20m,
+      !!@ ili2db.dispName = "> 20 m"
+      groesser_20m,
+      unbekannt
+    );
+
     Reibungswinkel = (
       !!@ ili2db.dispName = "< 25°"
       kleiner_25,
@@ -492,28 +521,20 @@ VERSION "2020-08-31"  =
 
     Wasserdurchlaessigkeit = (
       !!@ ili2db.dispName = "sehr klein (< 1x10-5 m/s)"
-      !!@ ili2db.dispName="sehr klein (< 1x10-5 m/s)"
       sehr_klein,
       !!@ ili2db.dispName = "klein und einheitlich (1x10-5 bis 2x10-4 m/s)"
-      !!@ ili2db.dispName="klein und einheitlich (1x10-5 bis 2x10-4 m/s)"
       klein_und_einheitlich,
       !!@ ili2db.dispName = "klein und uneinheitlich (1x10-5 bis 2x10-4 m/s)"
-      !!@ ili2db.dispName="klein und uneinheitlich (1x10-5 bis 2x10-4 m/s)"
       klein_und_uneinheitlich,
       !!@ ili2db.dispName = "mittel und einheitlich (2x10-4 bis 2x10-3 m/s)"
-      !!@ ili2db.dispName="mittel und einheitlich (2x10-4 bis 2x10-3 m/s)"
       mittel_und_einheitlich,
       !!@ ili2db.dispName = "mittel und uneinheitlich (2x10-4 bis 2x10-3 m/s)"
-      !!@ ili2db.dispName="mittel und uneinheitlich (2x10-4 bis 2x10-3 m/s)"
       mittel_und_uneinheitlich,
       !!@ ili2db.dispName = "gross und einheitlich (> 2x10-3 m/s)"
-      !!@ ili2db.dispName="gross und einheitlich (> 2x10-3 m/s)"
       gross_und_einheitlich,
       !!@ ili2db.dispName = "gross und uneinheitlich (> 2x10-3 m/s)"
-      !!@ ili2db.dispName="gross und uneinheitlich (> 2x10-3 m/s)"
       gross_und_uneinheitlich,
       !!@ ili2db.dispName = "gross, Karst"
-      !!@ ili2db.dispName="gross, Karst"
       gross_Karst,
       undifferenziert
     );
@@ -530,41 +551,6 @@ VERSION "2020-08-31"  =
       gespannt_in_tieferer_Lage,
       !!@ ili2db.dispName = "artesisch in tieferer Lage"
       artesisch_in_tieferer_Lage
-    );
-
-    Kohaesion = (
-      !!@ ili2db.dispName = "0 - 5"
-      !!@ ili2db.dispName="0 - 5"
-      kleiner_5,
-      !!@ ili2db.dispName = "5 - 10"
-      !!@ ili2db.dispName="5 - 10"
-      zwischen_5_und_10,
-      !!@ ili2db.dispName = "10 - 15"
-      !!@ ili2db.dispName="10 - 15"
-      zwischen_10_und_15,
-      !!@ ili2db.dispName = "15 - 20"
-      !!@ ili2db.dispName="15 - 20"
-      zwischen_15_und_20,
-      !!@ ili2db.dispName = "> 20"
-      !!@ ili2db.dispName="> 20"
-      groesser_20,
-      unbekannt
-    );
-
-    Material = (
-      !!@ ili2db.dispName = "0 - 0.5 m"
-      zwischen_0_und_0_5m,
-      !!@ ili2db.dispName = "0.5 - 2 m"
-      zwischen_0_5_und_2m,
-      !!@ ili2db.dispName = "2 - 5 m"
-      zwischen_2_und_5m,
-      !!@ ili2db.dispName = "5 - 10 m"
-      zwischen_5_und_10m,
-      !!@ ili2db.dispName = "10 - 20 m"
-      zwischen_10_und_20m,
-      !!@ ili2db.dispName = "> 20 m"
-      groesser_20m,
-      unbekannt
     );
 
   TOPIC Geologie =
@@ -586,9 +572,9 @@ VERSION "2020-08-31"  =
       );
     END Abrisskanten;
 
-    /** Abstrakte Klasse Epoche
+    /** Abstrakte Klasse Geologische_Schicht
      */
-    CLASS Epoche (ABSTRACT) =
+    CLASS Geologische_Schicht (ABSTRACT) =
       /** Geologisches System (von ...)
        */
       System1 : MANDATORY SO_AFU_Geologie_20200831.geologisches_System;
@@ -607,6 +593,8 @@ VERSION "2020-08-31"  =
       /** Geologische Formation (bis...)
        */
       Formation2 : MANDATORY SO_AFU_Geologie_20200831.geologische_Formation;
+      /** Geologische Schichtgliederung (von... bis...)
+       */
       Schichtgliederung : MANDATORY SO_AFU_Geologie_20200831.geologische_Schichtgliederung;
       /** Ausbildung des Festgesteins
        */
@@ -679,7 +667,7 @@ VERSION "2020-08-31"  =
       /** Fehlendes (nicht beschriebenes) Material bis zum nächsten Layer
        */
       Fehlendes_Material_bis_naechster_Layer : SO_AFU_Geologie_20200831.Material;
-    END Epoche;
+    END Geologische_Schicht;
 
     /** Aufnahme der Dolinen und Höhlen
      */
@@ -709,7 +697,7 @@ VERSION "2020-08-31"  =
       /** Kennzeichnung der Sonderfälle der horizontalen, vertikalen und überkippten Schichtlagerung
        */
       Typ : MANDATORY (
-        !!@ ili2db.dispName = "geneigt - Schichtneigung 1- 89°"
+        !!@ ili2db.dispName = "vertikal - Schichtneigung 90°"
         vertikal_Schichtneigung_90,
         !!@ ili2db.dispName = "horizontal - Orientierung des Einfallens nicht messbar"
         horizontal_Orientierung_Einfall_nicht_messbar,
@@ -729,7 +717,7 @@ VERSION "2020-08-31"  =
       Winkelbetrag_Einfall : MANDATORY 0 .. 90;
     END Schichtfallen;
 
-    /** Beobachtete und vermutete tektonische Strukturen: Verwerfungen, Über- schiebungen, Synklinal- und Antiklinalachsen
+    /** Beobachtete und vermutete tektonische Strukturen: Verwerfungen, Überschiebungen, Synklinal- und Antiklinalachsen
      */
     CLASS Tektonische_Strukturen =
       /** Geometrie der tektonischen Struktur
@@ -757,7 +745,7 @@ VERSION "2020-08-31"  =
     /** Flächendeckende Aufnahme der abgedeckten Schichten aus dem Trias, dem Jura und dem Tertiär. Geologischer, hydrogeologischer und geotechnischer Datensatz.
      */
     CLASS Grundschicht
-    EXTENDS Epoche =
+    EXTENDS Geologische_Schicht =
       Geometrie : MANDATORY GeometryCHLV95_V1.AreaWithOverlaps2mm;
       /** Maximalwinkel
        */
@@ -773,14 +761,14 @@ VERSION "2020-08-31"  =
     /** Aufnahme der obersten Lage des Holozäns von mindestens 0.5 m Mächtigkeit. Geologischer, hydrogeologischer und geotechnischer Datensatz.
      */
     CLASS Holozaen
-    EXTENDS Epoche =
+    EXTENDS Geologische_Schicht =
       Geometrie : MANDATORY GeometryCHLV95_V1.AreaWithOverlaps2mm;
     END Holozaen;
 
     /** Aufnahme der obersten Lage des Pleistozäns von mindestens 0.5 m Mächtigkeit. Geologischer, hydrogeologischer und geotechnischer Datensatz.
      */
     CLASS Pleistozaen
-    EXTENDS Epoche =
+    EXTENDS Geologische_Schicht =
       Geometrie : MANDATORY GeometryCHLV95_V1.AreaWithOverlaps2mm;
     END Pleistozaen;
 
