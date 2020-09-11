@@ -1,0 +1,8 @@
+# exclude .gradle directories
+**/.gradle/
+
+# exclude *.ili files
+**/*.ili
+
+# exclude *.xtf files
+**/*.xtf

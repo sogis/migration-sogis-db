@@ -1,0 +1,39 @@
+import java.nio.file.Paths
+import ch.so.agi.gretl.tasks.*
+
+
+apply plugin: 'ch.so.agi.gretl'
+
+description = """\n
+Prüft die Daten nach der Migration aus der Sogis-DB (edit, pub)
+Parameter: iliModel, dbSchema
+"""
+
+apply plugin: 'ch.so.agi.gretl'
+
+defaultTasks 'validateData'
+
+def xtfFileName = "validate.xtf"
+
+
+task exportData(type: Ili2pgExport) {
+    description = "Exportiert die in ein INTERLIS-Datei."
+    //database = [dbUriPub, dbUserPub, dbPwdPub]
+    if (dbName == "edit") {
+        database = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    }
+    else if (dbName == "pub") {
+        database = [dbUriPub, dbUserPub, dbPwdPub]
+    }
+    models = iliModel
+    dbschema = dbSchema
+    dataFile = "$rootDir/" + xtfFileName
+    //dataset = DataSet
+    disableValidation = true
+}
+
+task validateData(type: IliValidator, dependsOn: "exportData") {
+    description = "Validiert die exportierten Daten aus der DB inkl. der externen Beziehungen."
+    dataFiles = [file(Paths.get("$rootDir/" + xtfFileName))]
+    allObjectsAccessible = true
+}
