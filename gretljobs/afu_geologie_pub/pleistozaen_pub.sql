@@ -1,5 +1,5 @@
 SELECT 
-    geometrie,
+    ST_MakeValid(ST_RemoveRepeatedPoints(ST_SnapToGrid(geometrie, 0.001))) AS geometrie,
     system1,
     system2,
     serie1,

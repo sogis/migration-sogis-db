@@ -1,5 +1,5 @@
 SELECT
-    geometrie, 
+    ST_MakeValid(ST_RemoveRepeatedPoints(ST_SnapToGrid(geometrie, 0.0001))) AS geometrie, 
     typ,
     typ.dispname AS typ_txt
 FROM 
