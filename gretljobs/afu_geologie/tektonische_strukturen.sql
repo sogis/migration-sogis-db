@@ -23,6 +23,8 @@ FROM
     geologie.tekton
 WHERE
     archive = 0
+AND
+    ST_Length(wkb_geometry) > 0.01   -- 2 Linienstücke kleiner
 ;
         
                  

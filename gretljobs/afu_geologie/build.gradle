@@ -3,18 +3,26 @@ import ch.so.agi.gretl.api.TransferSet
 
 apply plugin: 'ch.so.agi.gretl'
 
-defaultTasks 'transferAfuGeologieEdit'
+defaultTasks 'makeValidGeometry'
 
 task transferAfuGeologieEdit(type: Db2Db){
     sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
     targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     transferSets = [
-            new TransferSet('abrisskanten.sql', 'afu_geologie.geologie_abrisskanten', true),                            // läuft durch
-            new TransferSet('grundschicht.sql', 'afu_geologie.geologie_grundschicht', true),                            // läuft durch mit Ausschluss
-            new TransferSet('holozaen.sql', 'afu_geologie.geologie_holozaen', true),                                    // läuft durch
-            new TransferSet('karst.sql', 'afu_geologie.geologie_karstformen', true),                                    // läuft durch
-            new TransferSet('pleistozaen.sql', 'afu_geologie.geologie_pleistozaen', true),                              // läuft durch
-            new TransferSet('schichtfallen.sql', 'afu_geologie.geologie_schichtfallen', true),                          // Fehler: ogc_fid  in (8050,7481,5980,4980): Werte über 90 
-            new TransferSet('tektonische_strukturen.sql', 'afu_geologie.geologie_tektonische_strukturen', true)         // läuft durch
+            new TransferSet('abrisskanten.sql', 'afu_geologie.geologie_abrisskanten', true),
+            new TransferSet('grundschicht.sql', 'afu_geologie.geologie_grundschicht', true),
+            new TransferSet('holozaen.sql', 'afu_geologie.geologie_holozaen', true),
+            new TransferSet('karst.sql', 'afu_geologie.geologie_karstformen', true),
+            new TransferSet('pleistozaen.sql', 'afu_geologie.geologie_pleistozaen', true),
+            new TransferSet('schichtfallen.sql', 'afu_geologie.geologie_schichtfallen', true),
+            new TransferSet('tektonische_strukturen.sql', 'afu_geologie.geologie_tektonische_strukturen', true)
+    ];
+    
+}
+
+task makeValidGeometry(type: SqlExecutor, dependsOn: "transferAfuGeologieEdit"){
+    database = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    sqlFiles = [
+            'make_valid_geometry.sql'
     ];
 }
