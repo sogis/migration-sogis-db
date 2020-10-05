@@ -5,7 +5,7 @@ apply plugin: 'ch.so.agi.gretl'
 
 defaultTasks 'transferAmbSirenenplanungEdit'
 
-task transferAmbSirenenplanungEdit(type: Db2Db){
+task transferAmbSirenenplanungEdit(type: Db2Db) {
     sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
     targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     transferSets = [

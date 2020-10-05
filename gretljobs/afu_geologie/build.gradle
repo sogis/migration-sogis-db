@@ -5,7 +5,7 @@ apply plugin: 'ch.so.agi.gretl'
 
 defaultTasks 'makeValidGeometry'
 
-task transferAfuGeologieEdit(type: Db2Db){
+task transferAfuGeologieEdit(type: Db2Db) {
     sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
     targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     transferSets = [
@@ -17,10 +17,9 @@ task transferAfuGeologieEdit(type: Db2Db){
             new TransferSet('schichtfallen.sql', 'afu_geologie.geologie_schichtfallen', true),
             new TransferSet('tektonische_strukturen.sql', 'afu_geologie.geologie_tektonische_strukturen', true)
     ];
-    
 }
 
-task makeValidGeometry(type: SqlExecutor, dependsOn: "transferAfuGeologieEdit"){
+task makeValidGeometry(type: SqlExecutor, dependsOn: "transferAfuGeologieEdit") {
     database = [dbUriEdit, dbUserEdit, dbPwdEdit]
     sqlFiles = [
             'make_valid_geometry.sql'

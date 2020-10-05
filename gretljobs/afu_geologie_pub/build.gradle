@@ -5,16 +5,16 @@ apply plugin: 'ch.so.agi.gretl'
 
 defaultTasks 'transferAfuGeologiePub'
 
-task transferAfuGeologiePub(type: Db2Db){
+task transferAfuGeologiePub(type: Db2Db) {
     sourceDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     targetDb = [dbUriPub, dbUserPub, dbPwdPub]
     transferSets = [
-            new TransferSet('abrisskanten_pub.sql', 'afu_geologie_pub.geologie_abrisskanten', true),                        // läuft durch
-            new TransferSet('grundschicht_pub.sql', 'afu_geologie_pub.geologie_grundschicht', true),                        // läuft durch mit Ausschluss
-            new TransferSet('holozaen_pub.sql', 'afu_geologie_pub.geologie_holozaen', true),                                // läuft durch
-            new TransferSet('karstformen_pub.sql', 'afu_geologie_pub.geologie_karstformen', true),                          // läuft durch
-            new TransferSet('pleistozaen_pub.sql', 'afu_geologie_pub.geologie_pleistozaen', true),                          // läuft durch
-            new TransferSet('schichtfallen_pub.sql', 'afu_geologie_pub.geologie_schichtfallen', true),                      // Fehler: ogc_fid  in (8050,7481,5980,4980): Werte über 90 
-            new TransferSet('tektonische_strukturen_pub.sql', 'afu_geologie_pub.geologie_tektonische_strukturen', true)     // läuft durch
+            new TransferSet('abrisskanten_pub.sql', 'afu_geologie_pub.geologie_abrisskanten', true),
+            new TransferSet('grundschicht_pub.sql', 'afu_geologie_pub.geologie_grundschicht', true),
+            new TransferSet('holozaen_pub.sql', 'afu_geologie_pub.geologie_holozaen', true),
+            new TransferSet('karstformen_pub.sql', 'afu_geologie_pub.geologie_karstformen', true),
+            new TransferSet('pleistozaen_pub.sql', 'afu_geologie_pub.geologie_pleistozaen', true),
+            new TransferSet('schichtfallen_pub.sql', 'afu_geologie_pub.geologie_schichtfallen', true), 
+            new TransferSet('tektonische_strukturen_pub.sql', 'afu_geologie_pub.geologie_tektonische_strukturen', true)
     ];
 }
