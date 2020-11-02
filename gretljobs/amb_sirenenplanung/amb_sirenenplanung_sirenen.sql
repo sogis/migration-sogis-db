@@ -1,4 +1,4 @@
- SELECT 
+SELECT 
     sir_nr AS sirenen_nr, 
     id_nr AS id, 
     so_sir_id AS so_sirenen_id,  
