@@ -34,10 +34,10 @@ VERSION "2020-10-23"  =
         !!@ ili2db.dispName = "Rutschungen (gemäss geologischer Karte)"
         F2
       );
-      /** Flächenausdehnung
+      /** Flächenausdehnung [m2]
        */
       Area : MANDATORY 0.00 .. 100000000.00;
-      /** Umfang
+      /** Umfang [m]
        */
       Perimeter : MANDATORY 0.00 .. 1000000.00;
       /** Vgl. Zuordnung

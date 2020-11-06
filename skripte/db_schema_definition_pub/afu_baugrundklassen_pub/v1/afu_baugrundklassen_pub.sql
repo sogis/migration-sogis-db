@@ -19,8 +19,8 @@ COMMENT ON TABLE afu_baugrundklassen_pub.baugrundklassen_baugrundklasse IS 'Die 
 Datengrundlage: Als Datengrundlage dienten bestehende kartografische Darstellungen (geologische und hydrogeologische Karte, Flurabstandskarte) sowie diverse weitere geologische Unterlagen (Baugrunduntersuchungen, Sondierungen, etc.). Felduntersuchungen wurden keine ausgeführt.
 Erhebungsmethode: Verschneidung und Auswertung bestehender geologischer Datensätze im GIS und manuelle Nachbearbeitung aufgrund Informationen aus anderen Datenquellen';
 COMMENT ON COLUMN afu_baugrundklassen_pub.baugrundklassen_baugrundklasse.baugrundklasse IS 'Baugrundklasse';
-COMMENT ON COLUMN afu_baugrundklassen_pub.baugrundklassen_baugrundklasse.area IS 'Flächenausdehnung';
-COMMENT ON COLUMN afu_baugrundklassen_pub.baugrundklassen_baugrundklasse.perimeter IS 'Umfang';
+COMMENT ON COLUMN afu_baugrundklassen_pub.baugrundklassen_baugrundklasse.area IS 'Flächenausdehnung [m2]';
+COMMENT ON COLUMN afu_baugrundklassen_pub.baugrundklassen_baugrundklasse.perimeter IS 'Umfang [m]';
 COMMENT ON COLUMN afu_baugrundklassen_pub.baugrundklassen_baugrundklasse.methode IS 'Vgl. Zuordnung';
 COMMENT ON COLUMN afu_baugrundklassen_pub.baugrundklassen_baugrundklasse.shapefile IS 'Vgl. Zuordnung';
 COMMENT ON COLUMN afu_baugrundklassen_pub.baugrundklassen_baugrundklasse.hilfsattribut IS 'Hilfsattribut zur Zerlegung der Daten in die 4 Kartenblätter';
@@ -371,7 +371,7 @@ REFSYSTEM MODEL CoordSys (en) AT "http://www.interlis.ch/models"
 
 END CoordSys.
 
-','2020-10-27 15:27:35.683');
+','2020-11-06 14:20:19.448');
 INSERT INTO afu_baugrundklassen_pub.T_ILI2DB_MODEL (filename,iliversion,modelName,content,importDate) VALUES ('Units-20120220.ili','2.3','Units','!! File Units.ili Release 2012-02-20
 
 INTERLIS 2.3;
@@ -469,7 +469,7 @@ CONTRACTED TYPE MODEL Units (en) AT "http://www.interlis.ch/models"
 
 END Units.
 
-','2020-10-27 15:27:35.683');
+','2020-11-06 14:20:19.448');
 INSERT INTO afu_baugrundklassen_pub.T_ILI2DB_MODEL (filename,iliversion,modelName,content,importDate) VALUES ('CHBase_Part1_GEOMETRY_20110830.ili','2.3','GeometryCHLV03_V1{ INTERLIS CoordSys Units} GeometryCHLV95_V1{ INTERLIS CoordSys Units}','/* ########################################################################
    CHBASE - BASE MODULES OF THE SWISS FEDERATION FOR MINIMAL GEODATA MODELS
    ======
@@ -647,19 +647,19 @@ TYPE MODEL GeometryCHLV95_V1 (en)
 END GeometryCHLV95_V1.
 
 !! ########################################################################
-','2020-10-27 15:27:35.683');
+','2020-11-06 14:20:19.448');
 INSERT INTO afu_baugrundklassen_pub.T_ILI2DB_MODEL (filename,iliversion,modelName,content,importDate) VALUES ('SO_AFU_Baugrundklassen_pub_20201023.ili','2.3','SO_AFU_Baugrundklassen_pub_20201023{ GeometryCHLV95_V1}','INTERLIS 2.3;
 
 /** !!------------------------------------------------------------------------------ 
  *  !! Version    | wer | Aenderung 
  *  !!------------------------------------------------------------------------------ 
- *  !! 2019-09-30 | PS  | Erstfassung 
+ *  !! 2020-10-23 | PS  | Erstfassung 
  * !!==============================================================================
  */
 !!@ technicalContact="mailto:agi@so.ch"
 MODEL SO_AFU_Baugrundklassen_pub_20201023 (de)
-AT "https://geo.so.ch/models/AWA"
-VERSION "2020-09-30"  =
+AT "https://geo.so.ch/models/AFU"
+VERSION "2020-10-23"  =
   IMPORTS GeometryCHLV95_V1;
 
   TOPIC Baugrundklassen =
@@ -684,10 +684,10 @@ VERSION "2020-09-30"  =
         !!@ ili2db.dispName = "Rutschungen (gemäss geologischer Karte)"
         F2
       );
-      /** Flächenausdehnung
+      /** Flächenausdehnung [m2]
        */
       Area : MANDATORY 0.00 .. 100000000.00;
-      /** Umfang
+      /** Umfang [m]
        */
       Perimeter : MANDATORY 0.00 .. 1000000.00;
       /** Vgl. Zuordnung
@@ -713,7 +713,7 @@ VERSION "2020-09-30"  =
   END Baugrundklassen;
 
 END SO_AFU_Baugrundklassen_pub_20201023.
-','2020-10-27 15:27:35.683');
+','2020-11-06 14:20:19.448');
 INSERT INTO afu_baugrundklassen_pub.T_ILI2DB_SETTINGS (tag,setting) VALUES ('ch.ehi.ili2db.createMetaInfo','True');
 INSERT INTO afu_baugrundklassen_pub.T_ILI2DB_SETTINGS (tag,setting) VALUES ('ch.ehi.ili2db.multiPointTrafo','coalesce');
 INSERT INTO afu_baugrundklassen_pub.T_ILI2DB_SETTINGS (tag,setting) VALUES ('ch.ehi.ili2db.nameOptimization','topic');
