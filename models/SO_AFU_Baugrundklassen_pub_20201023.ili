@@ -47,6 +47,13 @@ VERSION "2020-10-23"  =
       /** Vgl. Zuordnung
        */
       Shapefile : TEXT*50;
+      /** Beschreibung der Schritte zur Kartenerstellung (siehe auch Synthesebericht Kap.4)
+       * 1
+       * 2a
+       * 2b
+       * 3
+       * 4
+       */
       Zuordnung : MANDATORY TEXT*10;
       /** Hilfsattribut zur Zerlegung der Daten in die 4 Kartenblätter
        */
