@@ -1,0 +1,18 @@
+import ch.so.agi.gretl.tasks.*
+import ch.so.agi.gretl.api.TransferSet
+
+apply plugin: 'ch.so.agi.gretl'
+
+defaultTasks 'transferAfuGrundwasserisohypsenEdit'
+
+
+task transferAfuGrundwasserisohypsenEdit(type: Db2Db) {
+    sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
+    targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    transferSets = [
+            new TransferSet('grundwasserisohypsen_hgw.sql', 'afu_grundwasserisohypsen.grundwassrshypsen_hoechster_grundwasserstand', true),
+            new TransferSet('grundwasserisohypsen_mgw.sql', 'afu_grundwasserisohypsen.grundwassrshypsen_mittlerer_grundwasserstand', true),
+            new TransferSet('grundwasserisohypsen_tgw.sql', 'afu_grundwasserisohypsen.grundwassrshypsen_tiefer_grundwasserstand', true)
+
+    ];
+}
