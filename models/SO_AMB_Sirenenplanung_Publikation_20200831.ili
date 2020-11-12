@@ -7,7 +7,7 @@ INTERLIS 2.3;
  * !!==============================================================================
  */
 !!@ technicalContact="mailto:agi@so.ch"
-MODEL SO_AMB_Sirenenplanung_pub_20200831 (de)
+MODEL SO_AMB_Sirenenplanung_Publikation_20200831 (de)
 AT "http://geo.so.ch/models/AMB"
 VERSION "2020-08-31"  =
   IMPORTS GeometryCHLV95_V1;
@@ -93,4 +93,4 @@ VERSION "2020-08-31"  =
 
   END Sirenenplanung;
 
-END SO_AMB_Sirenenplanung_pub_20200831.
+END SO_AMB_Sirenenplanung_Publikation_20200831.
