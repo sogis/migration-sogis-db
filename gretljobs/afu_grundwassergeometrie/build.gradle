@@ -1,0 +1,22 @@
+import ch.so.agi.gretl.tasks.*
+import ch.so.agi.gretl.api.TransferSet
+
+apply plugin: 'ch.so.agi.gretl'
+
+apply plugin: 'ch.so.agi.gretl'
+
+defaultTasks 'transferAfuGrundwassergeometrie'
+
+task transferAfuGrundwassergeometrie(type: Db2Db) {
+    sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
+    targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    transferSets = [
+            new TransferSet('isohypse_hoechster_grundwasserstand.sql', 'afu_grundwassergeometrie.grundwassergmtrie_isohypse_hoechster_grundwasserstand', true),
+            new TransferSet('isohypse_mittlerer_grundwasserstand.sql', 'afu_grundwassergeometrie.grundwassergmtrie_isohypse_mittlerer_grundwasserstand', true),
+            new TransferSet('isohypse_tiefer_grundwasserstand.sql', 'afu_grundwassergeometrie.grundwassergmtrie_isohypse_tiefer_grundwasserstand', true),
+            new TransferSet('grundwasserstrom_begrenzung.sql', 'afu_grundwassergeometrie.grundwassergmtrie_grundwasserstrom_begrenzung_hgw', true),
+            new TransferSet('grundwasser_maechtigkeit.sql', 'afu_grundwassergeometrie.grundwassergmtrie_grundwasser_maechtigkeit', true),
+            new TransferSet('grundwasser_mittelstand.sql', 'afu_grundwassergeometrie.grundwassergmtrie_grundwasser_mittelstand', true),
+            new TransferSet('grundwasser_tiefstand.sql', 'afu_grundwassergeometrie.grundwassergmtrie_grundwasser_tiefstand', true)
+    ];
+}
