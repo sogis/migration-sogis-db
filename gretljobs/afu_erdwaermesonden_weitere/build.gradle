@@ -3,13 +3,27 @@ import ch.so.agi.gretl.api.TransferSet
 
 apply plugin: 'ch.so.agi.gretl'
 
-defaultTasks 'transferErdwaermeSondenWeitere'
+defaultTasks 'transferPrivateQuellen'
 
-task transferErdwaermeSondenWeitere(type: Db2Db) {
+task transferPrivateQuellen(type: Db2Db) {
     sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
     targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     transferSets = [
-            new TransferSet('afu_abfrageperimeter.sql','afu_erdwaermesonden_weitere.erdwarmsndn_wtere_abfrageperimeter', true),
             new TransferSet('afu_private_quelle.sql','afu_erdwaermesonden_weitere.erdwarmsndn_wtere_private_quelle', true)
+    ];
+}
+
+task transferAbfrageperimeter(type: Db2Db, dependsOn: "transferPrivateQuellen") {
+    sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
+    targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    transferSets = [
+            new TransferSet('afu_abfrageperimeter.sql','afu_erdwaermesonden_weitere.erdwarmsndn_wtere_abfrageperimeter', true)
+    ];
+}
+
+task makeValidGeometry(type: SqlExecutor, dependsOn: "transferAbfrageperimeter") {
+    database = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    sqlFiles = [
+            'make_valid_geometry.sql'
     ];
 }
