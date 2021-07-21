@@ -1,0 +1,14 @@
+import ch.so.agi.gretl.tasks.*
+import ch.so.agi.gretl.api.TransferSet
+
+apply plugin: 'ch.so.agi.gretl'
+
+defaultTasks 'transferAlwGelanHilfsgeometrien'
+
+task transferAlwGelanHilfsgeometrien(type: Db2Db) {
+    sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
+    targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    transferSets = [
+            new TransferSet('alw_gelan_hilfsgeometrien.sql','alw_gelan_hilfsgeometrien.hilfsgeometrien_hilfsgeometrie', true)
+    ];
+}

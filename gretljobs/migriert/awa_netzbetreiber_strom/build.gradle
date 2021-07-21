@@ -1,0 +1,21 @@
+import ch.so.agi.gretl.tasks.*
+import ch.so.agi.gretl.api.TransferSet
+
+apply plugin: 'ch.so.agi.gretl'
+
+defaultTasks 'makeValidGeometry'
+
+task transferAwaNetzbetreiberStromEdit(type: Db2Db) {
+    sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
+    targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    transferSets = [
+            new TransferSet('netzebene_3.sql', 'awa_netzbetreiber_strom.netzbetrebr_strom_ebene_3', true),
+            new TransferSet('netzebene_5.sql', 'awa_netzbetreiber_strom.netzbetrebr_strom_ebene_5', true),
+            new TransferSet('netzebene_7.sql', 'awa_netzbetreiber_strom.netzbetrebr_strom_ebene_7', true)
+    ];
+}
+
+task makeValidGeometry(type: SqlExecutor, dependsOn: "transferAwaNetzbetreiberStromEdit") {
+    database = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    sqlFiles = ['make_valid_geometry.sql'];
+}
