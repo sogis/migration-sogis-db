@@ -6,7 +6,7 @@ IS
 
 GRANT USAGE ON SCHEMA amb_sirenenplanung TO public, gretl
 ;
-GRANT SELECT, UPDATE, INSERT, DELETE ON ALL TABLES IN SCHEMA amb_sirenenplanung TO gretl
+GRANT SELECT, UPDATE, INSERT, DELETE ON ALL TABLES IN SCHEMA amb_sirenenplanung TO gretl, bjsvw
 ;
 GRANT SELECT ON ALL TABLES IN SCHEMA amb_sirenenplanung TO public
 ;

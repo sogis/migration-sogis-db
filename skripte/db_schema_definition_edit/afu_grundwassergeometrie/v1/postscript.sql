@@ -12,4 +12,6 @@ GRANT SELECT ON ALL TABLES IN SCHEMA afu_grundwassergeometrie TO afu_gewaessersc
 ;
 GRANT USAGE ON ALL SEQUENCES IN SCHEMA afu_grundwassergeometrie TO gretl
 ;
+GRANT afu_gewaesserschutz_write to bjsvw
+;
 
