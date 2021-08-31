@@ -1,0 +1,47 @@
+INTERLIS 2.3;
+
+/** !!------------------------------------------------------------------------------
+ * !! Version    | wer | Aenderung
+ * !!------------------------------------------------------------------------------
+ * !! 2021-08-31 | ps  | Ersterfassung
+ */
+!!@ technicalContact="mailto:agi@so.ch"
+MODEL SO_AWJF_Silvaprotect_20210831 (de)
+AT "http://geo.so.ch/models/AWJF/"
+VERSION "2021-08-31"  =
+  IMPORTS GeometryCHLV95_V1;
+
+  TOPIC Silvaprotect =
+
+    CLASS Silvaprotect_Einteilig (ABSTRACT) =
+      Geometrie : MANDATORY GeometryCHLV95_V1.Surface;
+      Sturz : MANDATORY 0 .. 1;
+      Hangmure : MANDATORY 0 .. 1;
+      Gerinne : MANDATORY 0 .. 1;
+      Lawine : MANDATORY 0 .. 1;
+      Andere_Kt : MANDATORY 0 .. 1;
+    END Silvaprotect_Einteilig;
+
+    CLASS Andere_Kt
+    EXTENDS Silvaprotect_Einteilig =
+    END Andere_Kt;
+
+    CLASS Gerinne
+    EXTENDS Silvaprotect_Einteilig =
+    END Gerinne;
+
+    CLASS Hangmure
+    EXTENDS Silvaprotect_Einteilig =
+    END Hangmure;
+
+    CLASS Lawine
+    EXTENDS Silvaprotect_Einteilig =
+    END Lawine;
+
+    CLASS Sturz
+    EXTENDS Silvaprotect_Einteilig =
+    END Sturz;
+
+  END Silvaprotect;
+
+END SO_AWJF_Silvaprotect_20210831.

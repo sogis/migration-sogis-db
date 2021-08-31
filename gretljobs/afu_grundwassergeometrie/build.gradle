@@ -17,6 +17,9 @@ task transferAfuGrundwassergeometrie(type: Db2Db) {
             new TransferSet('grundwasserstrom_begrenzung.sql', 'afu_grundwassergeometrie.grundwassergmtrie_grundwasserstrom_begrenzung_hgw', true),
             new TransferSet('grundwasser_maechtigkeit.sql', 'afu_grundwassergeometrie.grundwassergmtrie_grundwasser_maechtigkeit', true),
             new TransferSet('grundwasser_mittelstand.sql', 'afu_grundwassergeometrie.grundwassergmtrie_grundwasser_mittelstand', true),
-            new TransferSet('grundwasser_tiefstand.sql', 'afu_grundwassergeometrie.grundwassergmtrie_grundwasser_tiefstand', true)
+            new TransferSet('grundwasser_tiefstand.sql', 'afu_grundwassergeometrie.grundwassergmtrie_grundwasser_tiefstand', true),
+            new TransferSet('grundwasserspiegel_mittel_tief.sql', 'afu_grundwassergeometrie.grundwassergmtrie_grundwasserspiegel_mittel_tief', true),
+            new TransferSet('grundwasserstauer.sql', 'afu_grundwassergeometrie.grundwassergmtrie_grundwasserstauer', true),
+            new TransferSet('grundwasser_wasseramt.sql', 'afu_grundwassergeometrie.grundwassergmtrie_grundwasser_wasseramt', true)
     ];
 }

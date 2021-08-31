@@ -6,25 +6,36 @@ IS
 
 GRANT USAGE ON SCHEMA afu_grundwassergeometrie_pub TO afu_gewaesserschutz_pub_read, public, ogc_server, sogis_service, gretl
 ;
-GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA afu_grundwassergeometrie_pub TO  gretl
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA afu_grundwassergeometrie_pub TO gretl
 ;
 GRANT USAGE ON ALL SEQUENCES IN SCHEMA afu_grundwassergeometrie_pub TO gretl
 ;
+GRANT afu_gewaesserschutz_pub_read TO bjsvw
+;
 
-GRANT SELECT ON TABLE afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasser_maechtigkeit TO public, ogc_server, sogis_service
+
+GRANT SELECT ON TABLE afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasserstrom_begrenzung_hgw TO public, ogc_server, sogis_service
+;
+GRANT SELECT ON TABLE afu_grundwassergeometrie_pub.grundwassergmtrie_isohypse_hoechster_grundwasserstand TO public, ogc_server, sogis_service
+;
+GRANT SELECT ON TABLE afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasserspiegel_mittel_tief TO public, ogc_server, sogis_service
+;
+GRANT SELECT ON TABLE afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasserstauer TO public, ogc_server, sogis_service
+;
+
+GRANT SELECT ON TABLE afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasser_maechtigkeit TO afu_gewaesserschutz_pub_read, ogc_server, sogis_service
 ;
 GRANT SELECT ON TABLE afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasser_mittelstand TO afu_gewaesserschutz_pub_read, ogc_server, sogis_service
 ;
 GRANT SELECT ON TABLE afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasser_tiefstand TO afu_gewaesserschutz_pub_read, ogc_server, sogis_service
 ;
-GRANT SELECT ON TABLE afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasserstrom_begrenzung_hgw TO public, ogc_server, sogis_service
-;
-GRANT SELECT ON TABLE afu_grundwassergeometrie_pub.grundwassergmtrie_isohypse_hoechster_grundwasserstand TO public, ogc_server, sogis_service
-;
 GRANT SELECT ON TABLE afu_grundwassergeometrie_pub.grundwassergmtrie_isohypse_mittlerer_grundwasserstand TO afu_gewaesserschutz_pub_read, ogc_server, sogis_service
 ;
 GRANT SELECT ON TABLE afu_grundwassergeometrie_pub.grundwassergmtrie_isohypse_tiefer_grundwasserstand TO afu_gewaesserschutz_pub_read, ogc_server, sogis_service
 ;
+GRANT SELECT ON TABLE afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasser_wasseramt TO afu_gewaesserschutz_pub_read, ogc_server, sogis_service
+;
+
 
 ALTER TABLE afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasser_maechtigkeit ADD maechtigkeit_txt varchar(10)
 ;

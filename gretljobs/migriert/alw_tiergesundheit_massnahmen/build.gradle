@@ -1,0 +1,21 @@
+import ch.so.agi.gretl.tasks.*
+import ch.so.agi.gretl.api.TransferSet
+
+apply plugin: 'ch.so.agi.gretl'
+
+defaultTasks 'makeValidGeometry'
+
+task transferALWTiergesundheitMassnahmenEdit(type: Db2Db) {
+    sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
+    targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    transferSets = [
+            new TransferSet('alw_tiergesundheit_massnahmen.sql', 'alw_tiergesundheit_massnahmen.massnhmnrgsndheit_bienensperrgebiet', true)
+    ];
+}
+
+task makeValidGeometry(type: SqlExecutor, dependsOn: "transferALWTiergesundheitMassnahmenEdit") {
+    database = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    sqlFiles = [
+            'make_valid_geometry.sql'
+    ];
+}
