@@ -13,34 +13,42 @@ VERSION "2021-08-31"  =
 
   TOPIC Silvaprotect =
 
-    CLASS Silvaprotect_Einteilig (ABSTRACT) =
+    CLASS Silvaprotect (ABSTRACT) =
       Geometrie : MANDATORY GeometryCHLV95_V1.Surface;
       Sturz : MANDATORY 0 .. 1;
       Hangmure : MANDATORY 0 .. 1;
       Gerinne : MANDATORY 0 .. 1;
       Lawine : MANDATORY 0 .. 1;
       Andere_Kt : MANDATORY 0 .. 1;
-    END Silvaprotect_Einteilig;
+    END Silvaprotect;
 
     CLASS Andere_Kt
-    EXTENDS Silvaprotect_Einteilig =
+    EXTENDS Silvaprotect =
     END Andere_Kt;
 
+    /** SilvaProtect - Gerinne
+     */
     CLASS Gerinne
-    EXTENDS Silvaprotect_Einteilig =
+    EXTENDS Silvaprotect =
     END Gerinne;
 
-    CLASS Hangmure
-    EXTENDS Silvaprotect_Einteilig =
-    END Hangmure;
-
+    /** SilvaProtect - Lawine
+     */
     CLASS Lawine
-    EXTENDS Silvaprotect_Einteilig =
+    EXTENDS Silvaprotect =
     END Lawine;
 
-    CLASS Sturz
-    EXTENDS Silvaprotect_Einteilig =
-    END Sturz;
+    /** SilvaProtect - Rutschung
+     */
+    CLASS Rutschung
+    EXTENDS Silvaprotect =
+    END Rutschung;
+
+    /** SilvaProtect - Steinschlag
+     */
+    CLASS Steinschlag
+    EXTENDS Silvaprotect =
+    END Steinschlag;
 
   END Silvaprotect;
 

@@ -1,0 +1,18 @@
+import ch.so.agi.gretl.tasks.*
+import ch.so.agi.gretl.api.TransferSet
+
+apply plugin: 'ch.so.agi.gretl'
+
+defaultTasks 'transferAwjfSilvaprotectEinteiligEdit'
+
+task transferAwjfSilvaprotectEinteiligEdit(type: Db2Db) {
+    sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
+    targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    transferSets = [
+            new TransferSet('awjf_silvaprotecteinteilig_andere_kt.sql', 'awjf_silvaprotect.silvaprotect_andere_kt', true),
+            new TransferSet('awjf_silvaprotecteinteilig_gerinne.sql', 'awjf_silvaprotect.silvaprotect_gerinne', true),
+            new TransferSet('awjf_silvaprotecteinteilig_lawine.sql', 'awjf_silvaprotect.silvaprotect_lawine', true),
+            new TransferSet('awjf_silvaprotecteinteilig_rutschung.sql', 'awjf_silvaprotect.silvaprotect_rutschung', true),
+            new TransferSet('awjf_silvaprotecteinteilig_steinschlag.sql', 'awjf_silvaprotect.silvaprotect_steinschlag', true)
+    ];
+}
