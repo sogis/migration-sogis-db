@@ -3,16 +3,21 @@ import ch.so.agi.gretl.api.TransferSet
 
 apply plugin: 'ch.so.agi.gretl'
 
-defaultTasks 'transferAwjfSilvaprotectEinteiligEdit'
+defaultTasks 'makeValidGeometry'
 
-task transferAwjfSilvaprotectEinteiligEdit(type: Db2Db) {
+task transferAwjfSilvaprotectEdit(type: Db2Db) {
     sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
     targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     transferSets = [
-            new TransferSet('awjf_silvaprotecteinteilig_andere_kt.sql', 'awjf_silvaprotect.silvaprotect_andere_kt', true),
-            new TransferSet('awjf_silvaprotecteinteilig_gerinne.sql', 'awjf_silvaprotect.silvaprotect_gerinne', true),
-            new TransferSet('awjf_silvaprotecteinteilig_lawine.sql', 'awjf_silvaprotect.silvaprotect_lawine', true),
-            new TransferSet('awjf_silvaprotecteinteilig_rutschung.sql', 'awjf_silvaprotect.silvaprotect_rutschung', true),
-            new TransferSet('awjf_silvaprotecteinteilig_steinschlag.sql', 'awjf_silvaprotect.silvaprotect_steinschlag', true)
+            new TransferSet('awjf_silvaprotect_andere_kt.sql', 'awjf_silvaprotect.silvaprotect_andere_kt', true),
+            new TransferSet('awjf_silvaprotect_gerinne.sql', 'awjf_silvaprotect.silvaprotect_gerinne', true),
+            new TransferSet('awjf_silvaprotect_lawine.sql', 'awjf_silvaprotect.silvaprotect_lawine', true),
+            new TransferSet('awjf_silvaprotect_rutschung.sql', 'awjf_silvaprotect.silvaprotect_rutschung', true),
+            new TransferSet('awjf_silvaprotect_steinschlag.sql', 'awjf_silvaprotect.silvaprotect_steinschlag', true)
     ];
+}
+
+task makeValidGeometry(type: SqlExecutor, dependsOn: "transferAwjfSilvaprotectEdit") {
+    database = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    sqlFiles = ['make_valid_geometry.sql'];
 }

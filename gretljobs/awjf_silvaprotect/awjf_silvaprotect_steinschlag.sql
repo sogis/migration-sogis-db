@@ -1,5 +1,4 @@
 SELECT
-    ogc_fid AS t_id,
     sturz,
     hangmure,
     grs AS gerinne,
@@ -7,5 +6,5 @@ SELECT
     andere_kt,
     wkb_geometry AS geometrie
 FROM
-    awjf_work.silvaprotecteinteilig_lawine_kor
+    awjf_work.silvaprotecteinteilig_sturz_kor
 ;

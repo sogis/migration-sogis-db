@@ -1,5 +1,4 @@
 SELECT
-    ogc_fid AS t_id,
     sturz,
     hangmure,
     grs AS gerinne,
