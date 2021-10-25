@@ -40,5 +40,5 @@ SELECT
     informationen_bemerkungen,
     geometrie
 FROM 
-    amb_sirenenplanung.sirenenplanung_sirenen
+    amb_sirenenplanung.sirenenplanung_sirene
 ;
