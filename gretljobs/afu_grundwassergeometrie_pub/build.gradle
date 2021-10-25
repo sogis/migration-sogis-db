@@ -11,15 +11,15 @@ task transferAfuGrundwassergeometriePub(type: Db2Db) {
     sourceDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     targetDb = [dbUriPub, dbUserPub, dbPwdPub]
     transferSets = [
-            new TransferSet('grundwasser_maechtigkeit_pub.sql', 'afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasser_maechtigkeit', true),
-            new TransferSet('grundwasser_mittelstand_pub.sql', 'afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasser_mittelstand', true),
-            new TransferSet('grundwasser_tiefstand_pub.sql', 'afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasser_tiefstand', true),
-            new TransferSet('grundwasserstrom_begrenzung_pub.sql', 'afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasserstrom_begrenzung_hgw', true),
-            new TransferSet('isohypse_hoechster_grundwasserstand_pub.sql', 'afu_grundwassergeometrie_pub.grundwassergmtrie_isohypse_hoechster_grundwasserstand', true),
-            new TransferSet('isohypse_mittlerer_grundwasserstand_pub.sql', 'afu_grundwassergeometrie_pub.grundwassergmtrie_isohypse_mittlerer_grundwasserstand', true),
-            new TransferSet('isohypse_tiefer_grundwasserstand_pub.sql', 'afu_grundwassergeometrie_pub.grundwassergmtrie_isohypse_tiefer_grundwasserstand', true),
-            new TransferSet('grundwasserspiegel_mittel_tief_pub.sql', 'afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasserspiegel_mittel_tief', true),
-            new TransferSet('grundwasserstauer_pub.sql', 'afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasserstauer', true),
-            new TransferSet('grundwasser_wasseramt_pub.sql', 'afu_grundwassergeometrie_pub.grundwassergmtrie_grundwasser_wasseramt', true)
+            new TransferSet('grundwasser_maechtigkeit_pub.sql', 'afu_grundwassergeometrie_pub.grundwassrgmtrien_grundwasser_maechtigkeit', true),
+            new TransferSet('grundwasser_mittelstand_pub.sql', 'afu_grundwassergeometrie_pub.grundwassrgmtrien_grundwasser_mittelstand', true),
+            new TransferSet('grundwasser_tiefstand_pub.sql', 'afu_grundwassergeometrie_pub.grundwassrgmtrien_grundwasser_tiefstand', true),
+            new TransferSet('grundwasserstrom_begrenzung_pub.sql', 'afu_grundwassergeometrie_pub.grundwassrgmtrien_grundwasserstrom_begrenzung_hgw', true),
+            new TransferSet('isohypse_hoechster_grundwasserstand_pub.sql', 'afu_grundwassergeometrie_pub.grundwassrgmtrien_isohypse_hoechster_grundwasserstand', true),
+            new TransferSet('isohypse_mittlerer_grundwasserstand_pub.sql', 'afu_grundwassergeometrie_pub.grundwassrgmtrien_isohypse_mittlerer_grundwasserstand', true),
+            new TransferSet('isohypse_tiefer_grundwasserstand_pub.sql', 'afu_grundwassergeometrie_pub.grundwassrgmtrien_isohypse_tiefer_grundwasserstand', true),
+            new TransferSet('grundwasserspiegel_mittel_tief_pub.sql', 'afu_grundwassergeometrie_pub.grundwassrgmtrien_grundwasserspiegel_mittel_tief', true),
+            new TransferSet('grundwasserstauer_pub.sql', 'afu_grundwassergeometrie_pub.grundwassrgmtrien_grundwasserstauer', true),
+            new TransferSet('grundwasser_wasseramt_pub.sql', 'afu_grundwassergeometrie_pub.grundwassrgmtrien_grundwasser_wasseramt', true)
     ];
 }

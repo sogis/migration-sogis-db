@@ -4,5 +4,5 @@ SELECT
     bearbeiter,
     bearbeitung
 FROM
-    afu_grundwassergeometrie.grundwassergmtrie_grundwasserstrom_begrenzung_hgw
+    afu_grundwassergeometrie.grundwassrgmtrien_grundwasserstrom_begrenzung_hgw
 ;
