@@ -7,13 +7,13 @@ IS
 CREATE ROLE awjf_wald_oberhoehenbonitaet_write
 ;
 
-GRANT USAGE ON SCHEMA awjf_wald_oberhoehenbonitaet TO public, gretl, awjf_wald_oberhoehenbonitaet_write
+GRANT USAGE ON SCHEMA awjf_wald_oberhoehenbonitaet TO public
 ;
 GRANT SELECT ON TABLE awjf_wald_oberhoehenbonitaet.oberhoehenbonitaet TO public
 ;
 GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA awjf_wald_oberhoehenbonitaet TO gretl, awjf_wald_oberhoehenbonitaet_write
 ;
-GRANT USAGE ON ALL SEQUENCES IN SCHEMA awjf_wald_oberhoehenbonitaet TO gretl, awjf_wald_oberhoehenbonitaet_write
+GRANT USAGE ON ALL SEQUENCES IN SCHEMA awjf_wald_oberhoehenbonitaet TO awjf_wald_oberhoehenbonitaet_write, gretl
 ;
 GRANT awjf_wald_oberhoehenbonitaet_write TO vkfaa, gdi_write
 ;

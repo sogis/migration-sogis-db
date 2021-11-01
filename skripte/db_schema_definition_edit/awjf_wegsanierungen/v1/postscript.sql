@@ -6,9 +6,6 @@ IS
 
 CREATE ROLE awjf_wegsanierungen_write
 ;
-GRANT awjf_wegsanierungen_write TO vkfaaroe, vkfaascm, vkfaajos, vkfaabia, vkfaacot, vkfaahub, vkfaahol, bjsvw
-;
-
 
 GRANT USAGE ON SCHEMA awjf_wegsanierungen TO awjf_wegsanierungen_write, gretl
 ;
@@ -16,4 +13,7 @@ GRANT SELECT, UPDATE, INSERT, DELETE ON ALL TABLES IN SCHEMA awjf_wegsanierungen
 ;
 GRANT USAGE ON ALL SEQUENCES IN SCHEMA awjf_wegsanierungen TO awjf_wegsanierungen_write, gretl
 ;
+GRANT awjf_wegsanierungen_write TO vkfaaroe, vkfaascm, vkfaajos, vkfaabia, vkfaacot, vkfaahub, vkfaahol, gdi_write
+;
+
 

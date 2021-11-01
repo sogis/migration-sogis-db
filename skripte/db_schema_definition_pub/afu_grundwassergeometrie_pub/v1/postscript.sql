@@ -4,11 +4,11 @@ IS
    'Publikation der Gewässerschutzdaten. Fragen: AfU-Abteilung Wasser'
 ;
 
-GRANT USAGE ON SCHEMA afu_grundwassergeometrie_pub TO afu_gewaesserschutz_pub_read, public, ogc_server, sogis_service, gretl
+GRANT USAGE ON SCHEMA afu_grundwassergeometrie_pub TO public, gretl, ogc_server, sogis_service
 ;
 GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA afu_grundwassergeometrie_pub TO gretl
 ;
-GRANT USAGE ON ALL SEQUENCES IN SCHEMA afu_grundwassergeometrie_pub TO gretl
+GRANT USAGE ON ALL SEQUENCES IN SCHEMA afu_grundwassergeometrie_pub TO gretl, ogc_server, sogis_service
 ;
 GRANT afu_gewaesserschutz_pub_read TO bjsvw
 ;
