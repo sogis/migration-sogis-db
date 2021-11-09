@@ -7,20 +7,20 @@ defaultTasks 'makeValidGeometry'
 
 task transferAfuGeologieEdit(type: Db2Db) {
     sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
-    targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    targetDb = [dbUriEdit, dbUserEditDdl, dbPwdEditDdl]
     transferSets = [
-            new TransferSet('abrisskanten.sql', 'afu_geologie.geologie_abrisskanten', true),
-            new TransferSet('grundschicht.sql', 'afu_geologie.geologie_grundschicht', true),
-            new TransferSet('holozaen.sql', 'afu_geologie.geologie_holozaen', true),
-            new TransferSet('karst.sql', 'afu_geologie.geologie_karstformen', true),
-            new TransferSet('pleistozaen.sql', 'afu_geologie.geologie_pleistozaen', true),
-            new TransferSet('schichtfallen.sql', 'afu_geologie.geologie_schichtfallen', true),
-            new TransferSet('tektonische_strukturen.sql', 'afu_geologie.geologie_tektonische_strukturen', true)
+            new TransferSet('abrisskanten.sql', 'afu_geologie_v1.geologie_abrisskanten', true),
+            new TransferSet('grundschicht.sql', 'afu_geologie_v1.geologie_grundschicht', true),
+            new TransferSet('holozaen.sql', 'afu_geologie_v1.geologie_holozaen', true),
+            new TransferSet('karst.sql', 'afu_geologie_v1.geologie_karstformen', true),
+            new TransferSet('pleistozaen.sql', 'afu_geologie_v1.geologie_pleistozaen', true),
+            new TransferSet('schichtfallen.sql', 'afu_geologie_v1.geologie_schichtfallen', true),
+            new TransferSet('tektonische_strukturen.sql', 'afu_geologie_v1.geologie_tektonische_strukturen', true)
     ];
 }
 
 task makeValidGeometry(type: SqlExecutor, dependsOn: "transferAfuGeologieEdit") {
-    database = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    database = [dbUriEdit, dbUserEditDdl, dbPwdEditDdl]
     sqlFiles = [
             'make_valid_geometry.sql'
     ];
