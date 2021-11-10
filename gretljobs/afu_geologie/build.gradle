@@ -7,7 +7,7 @@ defaultTasks 'makeValidGeometry'
 
 task transferAfuGeologieEdit(type: Db2Db) {
     sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
-    targetDb = [dbUriEdit, dbUserEditDdl, dbPwdEditDdl]
+    targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     transferSets = [
             new TransferSet('abrisskanten.sql', 'afu_geologie_v1.geologie_abrisskanten', true),
             new TransferSet('grundschicht.sql', 'afu_geologie_v1.geologie_grundschicht', true),
@@ -20,7 +20,7 @@ task transferAfuGeologieEdit(type: Db2Db) {
 }
 
 task makeValidGeometry(type: SqlExecutor, dependsOn: "transferAfuGeologieEdit") {
-    database = [dbUriEdit, dbUserEditDdl, dbPwdEditDdl]
+    database = [dbUriEdit, dbUserEdit, dbPwdEdit]
     sqlFiles = [
             'make_valid_geometry.sql'
     ];
