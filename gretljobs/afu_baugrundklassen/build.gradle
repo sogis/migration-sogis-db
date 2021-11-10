@@ -9,7 +9,7 @@ task transferAfuBaugrundklassenEdit(type: Db2Db) {
     sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
     targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     transferSets = [
-            new TransferSet('afu_baugrundklassen.sql','afu_baugrundklassen_v1.baugrundklassen_baugrundklasse', true)
+            new TransferSet('afu_baugrundklassen.sql','afu_baugrundklassen_v1.baugrundklasse', true)
     ];
 }
 

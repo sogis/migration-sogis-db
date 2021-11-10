@@ -9,5 +9,5 @@ SELECT
     hilfsattribut,
     gefaehrdungszone
 FROM 
-    afu_baugrundklassen_v1.baugrundklassen_baugrundklasse
+    afu_baugrundklassen_v1.baugrundklasse
 ;
