@@ -9,11 +9,11 @@ task transferAwjfSilvaprotectEdit(type: Db2Db) {
     sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
     targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     transferSets = [
-            new TransferSet('awjf_silvaprotect_andere_kt.sql', 'awjf_silvaprotect.silvaprotect_andere_kt', true),
-            new TransferSet('awjf_silvaprotect_gerinne.sql', 'awjf_silvaprotect.silvaprotect_gerinne', true),
-            new TransferSet('awjf_silvaprotect_lawine.sql', 'awjf_silvaprotect.silvaprotect_lawine', true),
-            new TransferSet('awjf_silvaprotect_rutschung.sql', 'awjf_silvaprotect.silvaprotect_rutschung', true),
-            new TransferSet('awjf_silvaprotect_steinschlag.sql', 'awjf_silvaprotect.silvaprotect_steinschlag', true)
+            new TransferSet('awjf_silvaprotect_andere_kt.sql', 'awjf_silvaprotect_v1.silvaprotect_andere_kt', true),
+            new TransferSet('awjf_silvaprotect_gerinne.sql', 'awjf_silvaprotect_v1.silvaprotect_gerinne', true),
+            new TransferSet('awjf_silvaprotect_lawine.sql', 'awjf_silvaprotect_v1.silvaprotect_lawine', true),
+            new TransferSet('awjf_silvaprotect_rutschung.sql', 'awjf_silvaprotect_v1.silvaprotect_rutschung', true),
+            new TransferSet('awjf_silvaprotect_steinschlag.sql', 'awjf_silvaprotect_v1.silvaprotect_steinschlag', true)
     ];
 }
 
