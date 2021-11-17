@@ -9,6 +9,6 @@ task transferAmbSirenenplanungEdit(type: Db2Db) {
     sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
     targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     transferSets = [
-            new TransferSet('amb_sirenenplanung_sirenen.sql', 'amb_sirenenplanung_v1.sirene', true)
+            new TransferSet('amb_sirenenplanung.sql', 'amb_sirenenplanung_v1.sirene', true)
     ];
 }
