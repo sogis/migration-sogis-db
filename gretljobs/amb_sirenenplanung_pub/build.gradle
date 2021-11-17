@@ -9,6 +9,6 @@ task transferAmbSirenenplanungPub(type: Db2Db) {
     sourceDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     targetDb = [dbUriPub, dbUserPub, dbPwdPub]
     transferSets = [
-            new TransferSet('amb_sirenenplanung_pub.sql', 'amb_sirenenplanung_pub.sirenenplanung_sirene', true)
+            new TransferSet('amb_sirenenplanung_pub.sql', 'amb_sirenenplanung_pub_v1.sirene', true)
     ];
 }

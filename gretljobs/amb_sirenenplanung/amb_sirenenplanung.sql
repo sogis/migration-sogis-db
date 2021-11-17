@@ -1,20 +1,20 @@
 SELECT
-    sirenen_nr,
-    id,
-    so_sirenen_id,
-    postleitzahl,
+    sir_nr AS sirenen_nr,
+    id_nr AS id,
+    so_sir_id AS so_sirenen_id,
+    plz AS postleitzahl,
     gemeinde,
     politische_gemeinde,
-    anzahl_sirenen,
+    sir_stueck AS anzahl_sirenen,
     standortbezeichnung,
     standort_strasse,
     bedienungsstandort_schluesselschalter,
-    sirenengroesse,
+    sir_groesse AS sirenengroesse,
     dichte_faktor,
     kennwert_radius_1,
-    kennwert_durchmesser_1,
+    kennwert_radius_1 * 2 AS kennwert_durchmesser_1,
     kennwert_radius_2,
-    kennwert_durchmesser_2,
+    kennwert_radius_2 * 2 AS kennwert_durchmesser_2,
     winkel,
     sirenenbezeichnung,
     lieferant_service,
@@ -23,5 +23,5 @@ SELECT
     informationen_bemerkungen,
     geometrie
 FROM
-    amb_sirenenplanung_v1.sirene
+    amb_sirenenplanung.sirenen
 ;
