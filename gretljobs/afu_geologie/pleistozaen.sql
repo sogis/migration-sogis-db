@@ -10,7 +10,7 @@ SELECT
     codes_ausbi_fest.code_text_neu AS ausbildung_festgestein, 
     codes_lithologie1.code_text_neu AS lithologie1,
     codes_lithologie2.code_text_neu AS lithologie2,
-    codes_litho_fest.code_text_neu AS lithologie_festgestein,
+    pleist.litho_fest AS lithologie_festgestein,
     codes_sacku_fest.code_text_neu AS sackung_festgestein,
     codes_ausbi_lock.code_text_neu AS ausbildung_lockergestein,
     codes_litho_lock.code_text_neu AS lithologie_lockergestein,
@@ -24,7 +24,8 @@ SELECT
     codes_fels_reibe_.code_text_neu AS reibungswinkel_festgestein,
     codes_fels_kohae.code_text_neu AS kohaesion_festgestein,
     codes_mat_maecht.code_text_neu AS maechtigkeit_material,  
-    codes_fehlmatmae.code_text_neu AS fehlendes_material_bis_naechster_layer
+    codes_fehlmatmae.code_text_neu AS fehlendes_material_bis_naechster_layer,
+    pleist.neuer_code
 FROM 
     geologie_migration.pleist
     LEFT JOIN geologie_migration.codes AS codes_system1
@@ -97,13 +98,6 @@ FROM
             codes_litho_lock.attribut_id = 10
             AND
             codes_litho_lock.gesteinstyp = '2'
-    LEFT JOIN geologie_migration.codes AS codes_litho_fest
-        ON 
-            pleist.litho_fest = codes_litho_fest.code_id
-            AND
-            codes_litho_fest.attribut_id = 10
-            AND
-            codes_litho_fest.gesteinstyp = '1'
     LEFT JOIN geologie_migration.codes AS codes_sacku_fest
         ON 
             pleist.sacku_fest = codes_sacku_fest.code_id

@@ -10,7 +10,7 @@ SELECT
     codes_ausbi_fest.code_text_neu AS ausbildung_festgestein, 
     codes_lithologie1.code_text_neu AS lithologie1,
     codes_lithologie2.code_text_neu AS lithologie2,
-    codes_litho_fest.code_text_neu AS lithologie_festgestein,
+    grunds.litho_fest AS lithologie_festgestein,
     codes_sacku_fest.code_text_neu AS sackung_festgestein,
     codes_ausbi_lock.code_text_neu AS ausbildung_lockergestein,
     codes_litho_lock.code_text_neu AS lithologie_lockergestein,
@@ -27,7 +27,8 @@ SELECT
     codes_fehlmatmae.code_text_neu AS fehlendes_material_bis_naechster_layer,
     grunds.maxwinkel AS maximalwinkel, 
     grunds.midwinkel AS mittlerer_winkel, 
-    grunds.minwinkel AS minimalwinkel
+    grunds.minwinkel AS minimalwinkel,
+    grunds.neuer_code
 FROM 
     geologie_migration.grunds
     LEFT JOIN geologie_migration.codes AS codes_system1
@@ -100,13 +101,6 @@ FROM
             codes_litho_lock.attribut_id = 10
             AND
             codes_litho_lock.gesteinstyp = '2'
-    LEFT JOIN geologie_migration.codes AS codes_litho_fest
-        ON 
-            grunds.litho_fest = codes_litho_fest.code_id
-            AND
-            codes_litho_fest.attribut_id = 10
-            AND
-            codes_litho_fest.gesteinstyp = '1'
     LEFT JOIN geologie_migration.codes AS codes_sacku_fest
         ON 
             grunds.sacku_fest = codes_sacku_fest.code_id
