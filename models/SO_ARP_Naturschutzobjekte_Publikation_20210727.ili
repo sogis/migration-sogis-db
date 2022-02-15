@@ -7,7 +7,7 @@ INTERLIS 2.3;
  * !!==============================================================================
  */
 !!@ technicalContact="agi@bd.so.ch"
-MODEL SO_ARP_Naturschutzobjekte_20210727 (de)
+MODEL SO_ARP_Naturschutzobjekte_Publikation_20210727 (de)
 AT "http://geo.so.ch/models/ARP/"
 VERSION "2021-07-27"  =
   IMPORTS GeometryCHLV95_V1;
@@ -52,6 +52,9 @@ VERSION "2021-07-27"  =
       /** Gebietsbezeichnung (in der Regel Flurnamenbezeichnung)
        */
       Bezeichnung : MANDATORY TEXT*200;
+      /** Fläche [ha]
+       */
+      Flaeche : 0.1 .. 100.0;
     END Flachmoor;
 
     /** Flechtenstandorte (Inventare Natur und Landschaft).
@@ -197,4 +200,4 @@ VERSION "2021-07-27"  =
 
   END Naturschutzobjekte;
 
-END SO_ARP_Naturschutzobjekte_20210727.
+END SO_ARP_Naturschutzobjekte_Publikation_20210727.

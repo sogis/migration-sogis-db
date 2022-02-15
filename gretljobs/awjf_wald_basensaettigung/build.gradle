@@ -9,6 +9,6 @@ task transferAwjfWaldBasensaettigungEdit(type: Db2Db) {
     sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
     targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     transferSets = [
-            new TransferSet('awjf_wald_basensaettigung.sql', 'awjf_wald_basensaettigung.basensaettigung', true)
+            new TransferSet('awjf_wald_basensaettigung.sql', 'awjf_wald_basensaettigung_v1.basensaettigung', true)
     ];
 }

@@ -9,6 +9,6 @@ task transferAwjfWaldOberhoehenbonitaetEdit(type: Db2Db) {
     sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
     targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     transferSets = [
-            new TransferSet('awjf_wald_oberhoehenbonitaet.sql', 'awjf_wald_oberhoehenbonitaet.oberhoehenbonitaet', true)
+            new TransferSet('awjf_wald_oberhoehenbonitaet.sql', 'awjf_wald_oberhoehenbonitaet_v1.oberhoehenbonitaet', true)
     ];
 }

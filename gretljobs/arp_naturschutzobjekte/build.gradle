@@ -9,13 +9,11 @@ task transferArpNaturschutzobjekteEdit(type: Db2Db) {
     sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
     targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     transferSets = [
-            new TransferSet('arp_amphibienstandorte.sql', 'arp_naturschutzobjekte.naturschutzobjkte_amphibienstandort', true),
-            new TransferSet('arp_blaue_flaechen_grenchen.sql', 'arp_naturschutzobjekte.naturschutzobjkte_blaue_flaechen_grenchen', true),
-            new TransferSet('arp_flachmoore.sql', 'arp_naturschutzobjekte.naturschutzobjkte_flachmoor', true),
-            new TransferSet('arp_flechten.sql', 'arp_naturschutzobjekte.naturschutzobjkte_flechte', true),
-            new TransferSet('arp_karch_objekte.sql', 'arp_naturschutzobjekte.naturschutzobjkte_karch_objekt', true),
-            new TransferSet('arp_moose.sql', 'arp_naturschutzobjekte.naturschutzobjkte_moos', true)
+            new TransferSet('arp_amphibienstandorte.sql', 'arp_naturschutzobjekte_v1.naturschutzobjkte_amphibienstandort', true),
+            new TransferSet('arp_blaue_flaechen_grenchen.sql', 'arp_naturschutzobjekte_v1.naturschutzobjkte_blaue_flaechen_grenchen', true),
+            new TransferSet('arp_flachmoore.sql', 'arp_naturschutzobjekte_v1.naturschutzobjkte_flachmoor', true),
+            new TransferSet('arp_flechten.sql', 'arp_naturschutzobjekte_v1.naturschutzobjkte_flechte', true),
+            new TransferSet('arp_karch_objekte.sql', 'arp_naturschutzobjekte_v1.naturschutzobjkte_karch_objekt', true),
+            new TransferSet('arp_moose.sql', 'arp_naturschutzobjekte_v1.naturschutzobjkte_moos', true)
     ];
-    
 }
-
