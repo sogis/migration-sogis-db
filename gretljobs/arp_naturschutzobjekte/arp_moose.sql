@@ -30,5 +30,7 @@ SELECT
 FROM
     public.arp_nl_moose_t
 WHERE
+    wkb_geometry IS NOT NULL
+AND
     archive = 0
 ;
