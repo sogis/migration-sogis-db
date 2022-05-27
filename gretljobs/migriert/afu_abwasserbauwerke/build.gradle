@@ -1,0 +1,24 @@
+import ch.so.agi.gretl.tasks.*
+import ch.so.agi.gretl.api.TransferSet
+
+apply plugin: 'ch.so.agi.gretl'
+
+defaultTasks 'makeValidGeometry'
+
+
+task transferAfuAbwasserbauwerkeEdit(type: Db2Db) {
+    sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
+    targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    transferSets = [
+            new TransferSet('afu_abwasserbauwerke_schaechte_und_bauwerke.sql','afu_abwasserbauwerke_v1.schaechte_und_bauwerke', true),
+            new TransferSet('afu_abwasserbauwerke_leitungen.sql','afu_abwasserbauwerke_v1.leitungen', true),
+            new TransferSet('afu_abwasserbauwerke_ara.sql','afu_abwasserbauwerke_v1.abwasserreinigungsanlage', true)
+    ];
+}
+
+task makeValidGeometry(type: SqlExecutor, dependsOn: "transferAfuAbwasserbauwerkeEdit") {
+    database = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    sqlFiles = [
+            'make_valid_geometry.sql'
+    ];
+}

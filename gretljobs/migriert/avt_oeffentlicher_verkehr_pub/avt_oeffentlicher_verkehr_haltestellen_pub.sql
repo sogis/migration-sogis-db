@@ -1,0 +1,9 @@
+SELECT
+    haltestellenname,
+    didok,
+    verkehrsmittel,
+    kategorie,
+    geometrie
+FROM
+    avt_oeffentlicher_verkehr.oeffntlchr_vrkehr_haltestelle
+;

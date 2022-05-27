@@ -2,5 +2,5 @@ SELECT
     geometrie,
     kote
 FROM
-    afu_grundwassergeometrie.grundwassrgmtrien_grundwasserspiegel_mittel_tief
+    afu_grundwassergeometrie_v1.grundwassrgmtrien_grundwasserspiegel_mittel_tief
 ;
