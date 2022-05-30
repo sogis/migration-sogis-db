@@ -62,10 +62,7 @@ SELECT
         ELSE
            objnummer
     END AS objnummer,
-    'in_Bearbeitung' AS astatus
+    'abgeschlossen' AS astatus
 FROM
-    awjf_work.wap_bst_es
-WHERE
---     id_wp <> 119248            /*ungültige Geometrie*/
-    ST_isValid(wkb_geometry)
+    awjf.wap_bst
 ;
