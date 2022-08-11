@@ -62,10 +62,17 @@ SELECT
         ELSE
            objnummer
     END AS objnummer,
-    'in_Bearbeitung' AS astatus
+    CASE
+        WHEN id_wp = 0
+            THEN 'in_Bearbeitung'
+        ELSE
+            'abgeschlossen'
+    END AS astatus
 FROM
     awjf_work.wap_bst_es
 WHERE
---     id_wp <> 119248            /*ungültige Geometrie*/
-    ST_isValid(wkb_geometry)
+     id_wp <> 119248            /*ungültige Geometrie*/
+-- AND
+-- --     (ST_GeometryType(wkb_geometry) = 'ST_Polygon' OR  ST_GeometryType(wkb_geometry) = 'ST_MultiPolygon')
+--     ST_isValid(wkb_geometry)
 ;

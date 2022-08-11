@@ -2,11 +2,11 @@ SELECT
     wkb_geometry AS geometrie,
     CASE
         WHEN kurventyp = 1
-            THEN 'ein_Meter'
+            THEN 'm_1'
         WHEN kurventyp = 2
-            THEN 'zwei_Meter'
+            THEN 'm_2'
                 WHEN kurventyp = 10
-            THEN 'zehn_Meter'
+            THEN 'm_10'
     END AS kurventyp,
     kote,
     erfasser AS bearbeiter,

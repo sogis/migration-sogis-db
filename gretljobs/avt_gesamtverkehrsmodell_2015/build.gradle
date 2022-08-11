@@ -1,0 +1,24 @@
+import ch.so.agi.gretl.tasks.*
+import ch.so.agi.gretl.api.TransferSet
+
+apply plugin: 'ch.so.agi.gretl'
+
+defaultTasks 'makeValidGeometry'
+
+task transferAvtOeffentlicherVerkehrEdit(type: Db2Db) {
+    sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
+    targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    transferSets = [
+            new TransferSet('gvm_so_2015_pub.sql', 'avt_gesamtverkehrsmodell_2015_v1.gesamtverkehrsmodell', true),
+            new TransferSet('gvm_so_2015_prognose_2025_pub.sql', 'avt_gesamtverkehrsmodell_2015_v1.gesamtverkehrsmodell_prognose_2025', true),
+            new TransferSet('gvm_so_2015_prognose_2040_pub.sql', 'avt_gesamtverkehrsmodell_2015_v1.gesamtverkehrsmodell_prognose_2040', true),
+            new TransferSet('gvm_so_2015_oev_passagiere_pub.sql', 'avt_gesamtverkehrsmodell_2015_v1.oev_passagiere', true)
+    ];
+}
+
+task makeValidGeometry(type: SqlExecutor, dependsOn: "transferAvtOeffentlicherVerkehrEdit") {
+    database = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    sqlFiles = [
+            'make_valid_geometry.sql'
+    ];
+}

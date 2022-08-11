@@ -1,9 +1,9 @@
 SELECT
     geometrie,
-    maechtigkeit,
-    maechtigkeit.dispname as maechtigkeit_txt
+    maechtigkeit_m,
+    maechtigkeit.dispname AS maechtigkeit_m_txt
 FROM
-    afu_grundwassergeometrie_v1.grundwassrgmtrien_grundwasser_tiefstand AS grundwasser
-    LEFT JOIN afu_grundwassergeometrie_v1.grundwsrgmtrien_grundwasser_maechtigkeit AS maechtigkeit
-    ON grundwasser.maechtigkeit = maechtigkeit.ilicode
+    afu_grundwassergeometrie_v1.grundwasser_tiefstand AS grundwasser
+    LEFT JOIN afu_grundwassergeometrie_v1.grundwasser_maechtigkeit_m AS maechtigkeit
+    ON grundwasser.maechtigkeit_m = maechtigkeit.ilicode
 ;

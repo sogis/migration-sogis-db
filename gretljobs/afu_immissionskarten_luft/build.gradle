@@ -1,0 +1,21 @@
+import ch.so.agi.gretl.tasks.*
+import ch.so.agi.gretl.api.TransferSet
+
+apply plugin: 'ch.so.agi.gretl'
+
+defaultTasks 'makeValidGeometry'
+
+task transferAfuImmissionskarten(type: Db2Db){
+    sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
+    targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    transferSets = [
+                    new TransferSet('afu_immissionskarten_luftbelastung_2010_2020.sql',
+                                    'afu_immissionskarten_luft_v1.luftbelastung_2010_2020', true
+                    )
+    ];
+}
+
+task makeValidGeometry(type: SqlExecutor, dependsOn: "transferAfuImmissionskarten") {
+    database = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    sqlFiles = ['make_valid_geometry.sql'];
+}

@@ -13,7 +13,7 @@ SELECT
             THEN 'm_40_50'
         WHEN maechtigke = '>50m' OR maechtigke = '> 50m'
             THEN 'm_groesser_50'
-    END AS maechtigkeit
+    END AS maechtigkeit_m
 FROM
     public.aww_gstira
 WHERE

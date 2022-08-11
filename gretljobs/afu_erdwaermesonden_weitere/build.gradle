@@ -1,0 +1,23 @@
+import ch.so.agi.gretl.tasks.*
+import ch.so.agi.gretl.api.TransferSet
+
+apply plugin: 'ch.so.agi.gretl'
+
+defaultTasks 'makeValidGeometry'
+
+task afuErdwaermesondenWeitere(type: Db2Db) {
+    sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
+    targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    transferSets = [
+                     new TransferSet('afu_private_quelle.sql','afu_erdwaermesonden_weitere_v1.private_quelle', true)
+    ];
+}
+
+
+task makeValidGeometry(type: SqlExecutor, dependsOn: "afuErdwaermesondenWeitere") {
+    database = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    if (findProperty('ili2dbModeldir')) modeldir = ili2dbModeldir
+    sqlFiles = [
+                 'make_valid_geometry.sql'
+    ];
+}

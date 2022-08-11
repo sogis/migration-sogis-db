@@ -1,0 +1,30 @@
+import ch.so.agi.gretl.tasks.*
+import ch.so.agi.gretl.api.TransferSet
+
+
+apply plugin: 'ch.so.agi.gretl'
+
+defaultTasks 'transferAfuStoerfallverordnung'
+
+task transferAfuStoerfallverordnung(type: Db2Db){
+    sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
+    targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    transferSets = [
+            new TransferSet('afu_stoerfallverordnung_betriebe.sql', 'afu_stoerfallverordnung_v1.betrieb', true),
+            new TransferSet('afu_stoerfallverordnung_durchgangsstrassen.sql', 'afu_stoerfallverordnung_v1.durchgangsstrasse', true),
+            new TransferSet('afu_stoerfallverordnung_ergasroehrenspeicher.sql', 'afu_stoerfallverordnung_v1.erdgasroehrenspeicher', true),
+            new TransferSet('afu_stoerfallverordnung_nationalstrassen.sql', 'afu_stoerfallverordnung_v1.nationalstrasse', true)
+    ];
+}
+
+/*
+def pathToTempFolder =  System.getProperty("user.dir")
+
+task importBetriebsareal(type: ShpImport){
+    database = [dbUriEdit, dbUserEdit, dbPwdEdit]
+    schemaName = "afu_stoerfallverordnung_v1"
+    tableName = "betriebsareal"
+    println pathToTempFolder+'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+    dataFile = file(pathToTempFolder.toString()+'/betriebe_text_kb100_2022_fuer_import.shp')
+}
+*/

@@ -15,11 +15,6 @@ VERSION "2022-05-12"  =
   TOPIC Schadendienst =
     OID AS INTERLIS.UUIDOID;
 
-    CLASS Dokument =
-      Art : TEXT*10;
-      Name : TEXT*100;
-    END Dokument;
-
     CLASS Nichtschadenfall =
       Geometrie : GeometryCHLV95_V1.Coord2;
       Nichtschaden_ID : MANDATORY TEXT*10;
@@ -55,16 +50,6 @@ VERSION "2022-05-12"  =
       !!@ ili2db.dispName = "Schaden ID"
       Schaden_ID : 4220 .. 20000;
     END Schadenfall;
-
-    ASSOCIATION Nichtschadenfall_Dokument =
-      Nichtschadenfall_Dokument -- {0..*} Dokument;
-      Nichtschadenfall -- {1} Nichtschadenfall;
-    END Nichtschadenfall_Dokument;
-
-    ASSOCIATION Schadenfall_Dokument =
-      Schadenfall_Dokument -- {0..*} Dokument;
-      Schadenfall -- {1} Schadenfall;
-    END Schadenfall_Dokument;
 
   END Schadendienst;
 
