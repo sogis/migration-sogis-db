@@ -6,5 +6,4 @@ GRANT ${dbSchema}${roleSuffix}_write TO gretl;
 
 -- Groups and users
 GRANT ${dbSchema}${roleSuffix}_read TO ldap_roles;
-GRANT ${dbSchema}${roleSuffix}_write TO bvtaastp;
-GRANT ${dbSchema}${roleSuffix}_write TO gdi_write;
+GRANT ${dbSchema}${roleSuffix}_write TO bvtaastp, gdi_write;
