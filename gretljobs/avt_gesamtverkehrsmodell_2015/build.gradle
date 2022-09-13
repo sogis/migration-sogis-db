@@ -5,8 +5,8 @@ apply plugin: 'ch.so.agi.gretl'
 
 defaultTasks 'makeValidGeometry'
 
-task transferAvtOeffentlicherVerkehrEdit(type: Db2Db) {
-    sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
+task transferAvtGesamtverkehrsmodellEdit(type: Db2Db) {
+    sourceDb = [dbUriPub, dbUserPub, dbPwdPub]
     targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     transferSets = [
             new TransferSet('gvm_so_2015_pub.sql', 'avt_gesamtverkehrsmodell_2015_v1.gesamtverkehrsmodell', true),
@@ -16,9 +16,7 @@ task transferAvtOeffentlicherVerkehrEdit(type: Db2Db) {
     ];
 }
 
-task makeValidGeometry(type: SqlExecutor, dependsOn: "transferAvtOeffentlicherVerkehrEdit") {
+task makeValidGeometry(type: SqlExecutor, dependsOn: "transferAvtGesamtverkehrsmodellEdit") {
     database = [dbUriEdit, dbUserEdit, dbPwdEdit]
-    sqlFiles = [
-            'make_valid_geometry.sql'
-    ];
+    sqlFiles = ['make_valid_geometry.sql'];
 }

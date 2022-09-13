@@ -6,7 +6,5 @@ SELECT
     passagieranzahl_in_abendspitzen_2040,
     geometrie
 FROM
-    avt_gesamtverkehrsmodell2015_pub.gvm_so_2015_oev_passagiere
-WHERE
-    ST_Length(geometrie) > 2
+    avt_gesamtverkehrsmodell_2015_v1.oev_passagiere
 ;

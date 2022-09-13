@@ -9,9 +9,8 @@ task transferAwjfWaldplanSogis(type: Db2Db){
     sourceDb = [dbUriSogis, dbUserSogis, dbPwdSogis]
     targetDb = [dbUriEdit, dbUserEdit, dbPwdEdit]
     transferSets = [
-            new TransferSet('awjf_work_wap_bst_es.sql', 'awjf_waldplan_bestandeskarte_v1.waldplan_bestandeskarte', false),
+            new TransferSet('awjf_work_wap_bst_es.sql', 'awjf_waldplan_bestandeskarte_v1.waldplan_bestandeskarte', true),
             new TransferSet('awjf_work_wap_bst_bkt.sql', 'awjf_waldplan_bestandeskarte_v1.waldplan_bestandeskarte', false)
-                                    /* new TransferSet('awjf_wap_bst.sql', 'awjf_waldplan_bestandeskarte_v1.waldplan_bestandeskarte', false) */
     ];
 }
 
@@ -19,4 +18,6 @@ task transferAwjfWaldplanSogis(type: Db2Db){
 task makeValidGeometry(type: SqlExecutor, dependsOn: "transferAwjfWaldplanSogis") {
     database = [dbUriEdit, dbUserEdit, dbPwdEdit]
     sqlFiles = ['make_valid_geometry.sql'];
+
 }
+

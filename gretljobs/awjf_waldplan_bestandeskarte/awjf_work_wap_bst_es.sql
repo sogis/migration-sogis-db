@@ -27,7 +27,6 @@ SELECT
            fid_abt
     END AS fid_abt,
     bstnr,
-    -- besser wenn Roland Röösli den Wert bsttyp korrigiert
     CASE
         WHEN bsttyp < -2000000
             THEN 1000
@@ -72,7 +71,4 @@ FROM
     awjf_work.wap_bst_es
 WHERE
      id_wp <> 119248            /*ungültige Geometrie*/
--- AND
--- --     (ST_GeometryType(wkb_geometry) = 'ST_Polygon' OR  ST_GeometryType(wkb_geometry) = 'ST_MultiPolygon')
---     ST_isValid(wkb_geometry)
 ;
