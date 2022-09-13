@@ -9,9 +9,5 @@ GRANT ${dbSchema}${roleSuffix}_write TO gretl;
 
 
 -- Groups and users
-GRANT ${dbSchema}${roleSuffix}_read TO bjsvw;
+GRANT ${dbSchema}${roleSuffix}_read TO ldap_roles;
 GRANT ${dbSchema}${roleSuffix}_write TO gdi_write;
-
-
--- Tables
--- GRANT Isohypse_Hoechster_Grundwasserstand, Isohypse_Mittlerer_Grundwasserstand, Grundwasser_Maechtigkeit to ldap_roles;

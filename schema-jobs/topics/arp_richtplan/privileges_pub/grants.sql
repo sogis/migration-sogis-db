@@ -3,10 +3,10 @@
 
 
 -- System users
+GRANT ${dbSchema}${roleSuffix}_read TO ogc_server;
+GRANT ${dbSchema}${roleSuffix}_read TO sogis_service;
 GRANT ${dbSchema}${roleSuffix}_write TO gretl;
 
 
 -- Groups and users
-GRANT ${dbSchema}${roleSuffix}_read TO bjsvw;
-GRANT ${dbSchema}${roleSuffix}_write TO gdi_write;
-GRANT ${dbSchema}${roleSuffix}_write TO vumaavat;
+GRANT ${dbSchema}${roleSuffix}_read TO ldap_roles;
